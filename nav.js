@@ -16,3 +16,19 @@ document.addEventListener('click', (event) => {
     }
   });
 });
+
+document.querySelectorAll('.managed-image').forEach((image) => {
+  const slot = image.closest('.managed-image-slot');
+  if (!slot) return;
+
+  const showImage = () => slot.classList.remove('image-missing');
+  const showFallback = () => slot.classList.add('image-missing');
+
+  image.addEventListener('load', showImage);
+  image.addEventListener('error', showFallback);
+
+  if (image.complete) {
+    if (image.naturalWidth > 0) showImage();
+    else showFallback();
+  }
+});
