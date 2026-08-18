@@ -33,6 +33,7 @@ main { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
 .hero-banner { margin-top: 1.5rem; padding: clamp(2rem,6vw,5rem); border: 1px solid var(--border); border-radius: 18px; background: linear-gradient(135deg,#17212d,#28394c); }
 .compact-hero { padding: clamp(1.5rem,4vw,3rem); }
 .eyebrow { margin: 0 0 .4rem; color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 800; }
+.hero-subtitle { margin: 1rem 0 0; max-width: 760px; color: var(--muted); font-size: clamp(1rem,2vw,1.2rem); }
 h1,h2,h3 { line-height: 1.15; }
 h1 { margin: 0; font-size: clamp(2rem,6vw,4.5rem); max-width: 850px; }
 h2 { margin: 0; font-size: clamp(1.6rem,4vw,2.5rem); }
