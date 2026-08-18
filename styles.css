@@ -61,6 +61,8 @@ h3 { margin: .35rem 0 .5rem; font-size: 1.45rem; }
 .placeholder { margin: 0; color: var(--muted); }
 .empty-state { color: var(--muted); }
 .game-main { padding: 0 0 3rem; }
+.game-shell { display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 2rem; align-items: start; margin-top: 1.5rem; }
+.game-sidebar { position: sticky; top: 5.5rem; }
 .game-intro { margin-bottom: 1rem; }
 .game-intro p { color: var(--muted); }
 .screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 2rem; }
@@ -95,7 +97,7 @@ h3 { margin: .35rem 0 .5rem; font-size: 1.45rem; }
 .next-page { margin-left: auto; }
 .page-number:hover, .page-number:focus-visible, .next-page:hover, .next-page:focus-visible { border-color: var(--accent); }
 .site-footer { border-top: 1px solid var(--border); color: var(--muted); text-align: center; padding: 2rem 1rem; }
-@media (max-width: 900px) { .article-shell { grid-template-columns: 1fr; } .article-sidebar { display: none; } }
+@media (max-width: 900px) { .article-shell, .game-shell { grid-template-columns: 1fr; } .article-sidebar, .game-sidebar { display: none; } }
 @media (max-width: 760px) {
   .top-nav { align-items: flex-start; }
   .nav-dropdown { position: static; }
