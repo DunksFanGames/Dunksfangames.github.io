@@ -1,5 +1,29 @@
 const dropdowns = [...document.querySelectorAll('.nav-dropdown')];
 
+const kspDropdown = dropdowns.find((dropdown) => {
+  const summary = dropdown.querySelector(':scope > summary');
+  return summary && summary.textContent.trim() === 'KSP';
+});
+
+if (kspDropdown) {
+  const menuLinks = [...kspDropdown.querySelectorAll('.dropdown-menu > a')];
+  const mainHref = menuLinks[0]?.getAttribute('href') || 'ksp.html';
+  const prefix = mainHref.endsWith('ksp.html') ? mainHref.slice(0, -'ksp.html'.length) : '';
+  const kspSections = [
+    { index: 1, label: 'Playstyles', href: `${prefix}ksp-playstyles.html` },
+    { index: 2, label: 'Mods', href: `${prefix}ksp-mods.html` }
+  ];
+
+  kspSections.forEach(({ index, label, href }) => {
+    const link = menuLinks[index];
+    if (!link) return;
+    link.classList.remove('placeholder-link');
+    link.removeAttribute('aria-disabled');
+    link.href = href;
+    link.textContent = label;
+  });
+}
+
 dropdowns.forEach((dropdown) => {
   dropdown.addEventListener('toggle', () => {
     if (!dropdown.open) return;
